@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "sweetandketo": {
+      "hosting": {
+        "SweetKetoIonicFirestore": [
+          "sweetandketo"
+        ]
+      }
+    }
+  }
+}

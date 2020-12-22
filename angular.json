@@ -123,9 +123,16 @@
               "devServerTarget": "SweetKetoIonicFirestore:serve:production"
             }
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {}
         }
       }
     }
   },
-  "defaultProject": "SweetKetoIonicFirestore"
+  "defaultProject": "SweetKetoIonicFirestore",
+  "cli": {
+    "analytics": "fec37ab5-8705-4236-a1d6-2716cb949a4a"
+  }
 }
