@@ -9,12 +9,20 @@ import { RESOURCE_CACHE_PROVIDER } from '@angular/platform-browser-dynamic';
 })
 export class OrdersComponent implements OnInit {
 
+  edit = false;
   productos: any[] = [];
-  producto: Product = {imgUrl: 'x', descripcion: 'test'};
+
+  producto?: Product;
   constructor(private db: AngularFirestore) { }
 
   ngOnInit(): void {
     this.GetProducts();
+  }
+
+  EditMode(producto: Product){
+    this.edit = !this.edit;
+    this.producto = producto;
+    console.log(producto);
   }
 
   GetProducts() {
@@ -32,6 +40,14 @@ export class OrdersComponent implements OnInit {
   Remove(producto: Product){
     this.db.collection('productos').doc(producto.id).delete().then(Response => {
       console.log(Response);
+
+    })
+  }
+  Update(producto: Product){
+    this.db.collection('productos').doc(producto.id).update(producto).then(Response => {
+      console.log(Response);
+      this.edit = false;
+      this.producto = undefined;
 
     })
   }

@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { environment } from 'src/environments/environment';
 import { OrdersComponent } from './components/orders/orders.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { OrdersComponent } from './components/orders/orders.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     AngularFirestoreModule,
     AngularFireModule.initializeApp(environment.firebase)
   ],

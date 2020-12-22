@@ -5,14 +5,20 @@
           <img [src]="item.imgUrl" class="img-fluid" alt="image">
         </div>
         <div class="id">
-          {{item.id}}
+
+          <input *ngIf="edit"  type="text" [(ngModel)]="item.descripcion" >
+           <div class="label" *ngIf="!edit">
+            {{item.id}}
+          </div>
+
         </div>
         <div class="descrip">
           {{item.descripcion}}
         </div>
         <div class="actions w-100 d-flex flex-col justify-end">
-          <button type="button" class="btn btn-outline-primary">add</button>
-          <button type="button" class="btn btn-outline-danger" (click)="Remove(item)">remove</button>
+          <button type="button" class="btn btn-outline-primary" *ngIf="!edit" (click)="EditMode(item)">Edit </button>
+          <button type="button" class="btn btn-outline-primary" *ngIf="edit && producto === item" (click)="Update(item)">Save </button>
+          <button type="button" class="btn btn-outline-danger" (click)="Remove(item)">Remove</button>
         </div>
       </div>
     </div>
