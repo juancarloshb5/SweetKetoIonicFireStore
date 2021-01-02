@@ -1,0 +1,12 @@
+
+
+<ion-item>
+  <ion-label>Email</ion-label>
+  <ion-input placeholder="Email" [(ngModel)]="user.email"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label>Password</ion-label>
+  <ion-input [(ngModel)]="user.password" placeholder="Password"></ion-input>
+</ion-item>
+
+<ion-button (click)="Submit()">Submit</ion-button>
