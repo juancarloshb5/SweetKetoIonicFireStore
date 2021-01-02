@@ -20,6 +20,7 @@ import { IonicModule } from '@ionic/angular';
 import { ProductPageComponent } from './components/product/product-page/product-page.component';
 import { RegisterComponent } from './components/auth/register/register.component';
 import { LoginComponent } from './components/auth/login/login.component';
+import { ProductImagesComponent } from './components/product-images/product-images.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { LoginComponent } from './components/auth/login/login.component';
     ProductEditComponent,
     ProductPageComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    ProductImagesComponent
   ],
   imports: [
     BrowserModule,

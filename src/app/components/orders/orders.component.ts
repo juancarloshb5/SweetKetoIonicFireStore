@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/firestore';
 import {  AngularFireStorage} from '@angular/fire/storage';
 import { RESOURCE_CACHE_PROVIDER } from '@angular/platform-browser-dynamic';
+import { Guid } from 'guid-typescript';
+import { Product } from 'src/app/models/Product.models';
 
 @Component({
   selector: 'app-orders',
@@ -56,10 +58,10 @@ export class OrdersComponent implements OnInit {
   SelectFile(event: any){
     console.log(event.target.files);
     const image = event.target.files[0];
-
-    const path = `product-images/${image.name + new Date()}`;
+    const path = `product-images/${image.name + Guid.create()}`;
     this.storage.upload(path,image).then(Response => {
       console.log(Response);
+
 
     });
 
@@ -67,10 +69,6 @@ export class OrdersComponent implements OnInit {
 
 
 }
-export class Product {
-  id?: string;
-  imgUrl?: string;
-  descripcion?: string;
-}
+
 
 

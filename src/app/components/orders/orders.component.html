@@ -1,33 +1,38 @@
-<div class="container">
-  <input
-  placeholder="Select a Picture"
-  type="file"
-  (change)="SelectFile($event)"
-  >
-  <div class="row p-3">
-      <div *ngFor="let item of productos" class="col-6 col-md-3 card p-0 m-2">
-        <div class="img">
-          <img [src]="item.imgUrl" class="img-fluid" alt="image">
-        </div>
-        <div class="id">
+<ion-content>
+  <ion-button routerLink="product-create" >Add new Product</ion-button>
 
-          <input *ngIf="edit"  type="text" [(ngModel)]="item.descripcion" >
-           <div class="label" *ngIf="!edit">
-            {{item.id}}
+  <div class="container">
+    <input
+    placeholder="Select a Picture"
+    type="file"
+    (change)="SelectFile($event)"
+    >
+    <div class="row p-3">
+        <div *ngFor="let item of productos" class="col-6 col-md-3 card p-0 m-2">
+          <div class="img">
+            <img [src]="item.imgUrl" class="img-fluid" alt="image">
           </div>
+          <div class="id">
 
-        </div>
-        <div class="descrip">
-          {{item.descripcion}}
-        </div>
-        <div class="actions w-100 d-flex flex-col justify-end">
-          <button type="button" class="btn btn-outline-primary" *ngIf="!edit" (click)="EditMode(item)">Edit </button>
-          <button type="button" class="btn btn-outline-primary" *ngIf="edit && producto === item" (click)="Update(item)">Save </button>
-          <button type="button" class="btn btn-outline-danger" (click)="Remove(item)">Remove</button>
+            <input *ngIf="edit"  type="text" [(ngModel)]="item.descripcion" >
+             <div class="label" *ngIf="!edit">
+              {{item.id}}
+            </div>
+
+          </div>
+          <div class="descrip">
+            {{item.descripcion}}
+          </div>
+          <div class="actions w-100 d-flex flex-col justify-end">
+            <button type="button" class="btn btn-outline-primary" *ngIf="!edit" (click)="EditMode(item)">Edit </button>
+            <button type="button" class="btn btn-outline-primary" *ngIf="edit && producto === item" (click)="Update(item)">Save </button>
+            <button type="button" class="btn btn-outline-danger" (click)="Remove(item)">Remove</button>
+          </div>
         </div>
       </div>
-    </div>
-</div>
+  </div>
+
+</ion-content>
 
 
 

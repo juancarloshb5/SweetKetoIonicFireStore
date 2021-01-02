@@ -1,0 +1,12 @@
+<ion-content>
+  <p>product-images works!</p>
+  <div class="images">
+      <div class="img" (click)="SelectImage(item)" *ngFor="let item of imgs">
+        <img [src]="item" alt="">
+      </div>
+
+  </div>
+
+
+
+</ion-content>
